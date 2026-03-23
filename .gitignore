@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Node (for any tooling scripts)
+node_modules/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local Claude settings (never commit)
+.claude/settings.local.json
+
+# Symlinks installed by install.sh in downstream projects
+# (listed here as documentation — actual entries go in downstream .gitignore)

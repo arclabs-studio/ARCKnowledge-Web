@@ -1,0 +1,75 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main, develop]
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_prompt: |
+            You are a senior web engineer at ARC Labs Studio reviewing a pull request.
+
+            Review the changed files against ARC Labs web standards using the arc-web-reviewer agent approach.
+            Focus on:
+
+            **Architecture (A)**
+            - Dependency direction: Presentation → Domain ← Data (never reversed)
+            - No repository imports in `.tsx` files
+            - No business logic in component functions (use hooks)
+            - Path aliases used (`@domain/`, `@data/`, `@presentation/`)
+
+            **Presentation (B)**
+            - Components contain JSX only (no useEffect, no async)
+            - CSS Modules with design tokens only (no hardcoded values)
+            - Named exports only (no export default)
+            - Mobile-first CSS
+
+            **Domain (C)**
+            - Pure TypeScript entities (no React/browser imports)
+            - `as const` + `typeof` instead of `enum`
+            - No `as` type assertions
+            - Explicit return types on all functions
+
+            **Data (D)**
+            - Repositories return `Result<T>` for fallible operations
+            - console.log guarded by `import.meta.env.DEV`
+
+            **Testing (E)**
+            - Tests co-located with components
+            - Given/When/Then structure
+            - `getByRole` preferred over `getByTestId`
+            - No arbitrary `setTimeout`
+
+            **Code Style (F)**
+            - No `any` types
+            - `import type` for type-only imports
+            - Event handlers: `handle*` internal, `on*` in props
+
+            **Accessibility (G)**
+            - `focus-visible` on interactive elements
+            - Images have `alt` text
+            - Form inputs have `<label>`
+            - Error messages use `role="alert"`
+
+            **Performance (H)**
+            - Images have `width` and `height`
+            - No unnecessary `useMemo`/`useCallback`
+
+            Provide specific file:line references for each finding.
+            Use severity levels: **Blocker**, **Major**, **Minor**, **Note**.
+            End with verdict: APPROVED, APPROVED WITH NOTES, CHANGES REQUESTED, or BLOCKED.
