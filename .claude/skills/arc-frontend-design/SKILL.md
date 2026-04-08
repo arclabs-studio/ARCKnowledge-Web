@@ -14,6 +14,8 @@ metadata:
 
 # ARC Labs Studio - Frontend Design
 
+> **Canonical design system**: See [`DESIGN.md`](../../../DESIGN.md) at the repo root for the complete ARC Labs visual design system — colors, typography, component specs, layout, depth, and responsive behavior. This skill provides quick **operational patterns** for CSS implementation.
+
 ## Instructions
 
 ### Design Principles
@@ -24,16 +26,6 @@ metadata:
 4. **Obsessive consistency** — Same patterns everywhere. Inconsistency feels unfinished.
 5. **Progressive Enhancement** — Mobile baseline. Layer up for larger screens.
 6. **Accessibility by Default** — WCAG 2.2 AA from the first line. Not retrofitted.
-
-### Brand Aesthetic
-
-**Visual reference**: appl.studio — professional indie Apple studio aesthetic.
-
-- **Primary**: Burgundy `#541311` (deep, premium, distinctive)
-- **Accent**: Gold `#FFB42E` (warm, aspirational)
-- **Background**: Near-black `#0f0f0f` (dark, sophisticated)
-- **Typography**: Radley Sans (custom, Apple-adjacent)
-- **Feel**: Dark, premium, minimal, high-end software studio
 
 ### Design Tokens — Always
 
@@ -228,6 +220,7 @@ All interactive elements must have a clear focus ring:
 
 ## Further Reading
 
-- `Quality/design-tokens.md` — full token reference, theme system
+- `DESIGN.md` — complete ARC Labs design system (Google Stitch format): colors, typography, components, layout, depth, responsive
+- `Quality/design-tokens.md` — token implementation guide, theme system, adding new tokens
 - `Quality/accessibility.md` — WCAG 2.2 AA, focus states, reduced motion
 - `Architecture/web-design-principles.md` — 6 core design principles

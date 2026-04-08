@@ -18,6 +18,7 @@ Anthropic frontend-design → merged into `arc-frontend-design`
 
 | Task | Primary Skill | Secondary |
 |------|--------------|-----------|
+| Visual design system reference | `DESIGN.md` (root file) | `arc-frontend-design` |
 | Designing feature architecture | `arc-web-architecture` | — |
 | New project setup | `arc-project-setup` | `arc-web-stack` |
 | Stack/library decisions | `arc-web-stack` | — |
@@ -122,11 +123,12 @@ Anthropic frontend-design → merged into `arc-frontend-design`
 
 ### Design Implementation from Figma
 
-1. Use Figma MCP to read the design
-2. Load `/arc-frontend-design` — token mapping, layout patterns
-3. Load `/arc-accessibility` — WCAG requirements for the design
-4. Load `/arc-presentation-layer` — component + CSS Module structure
-5. Load `/arc-tdd-patterns` — write component tests
+1. Read `DESIGN.md` — understand ARC Labs visual language before mapping the design
+2. Use Figma MCP to read the design
+3. Load `/arc-frontend-design` — CSS patterns, animation, anti-AI-slop
+4. Load `/arc-accessibility` — WCAG requirements for the design
+5. Load `/arc-presentation-layer` — component + CSS Module structure
+6. Load `/arc-tdd-patterns` — write component tests
 
 ---
 
@@ -145,11 +147,14 @@ Overlap causes rule conflicts (`expect` type signatures differ between Vitest an
 
 ## Knowledge Base Files
 
-| Directory | Contents |
-|-----------|---------|
+| Location | Contents |
+|----------|---------|
+| `DESIGN.md` (root) | Complete ARC Labs visual design system — 9-section Google Stitch format |
+| `CLAUDE.md` (root) | Primary agent guide — skills, rules, architecture reference |
+| `AGENTS.md` (root) | Agent roster and routing |
 | `Architecture/` | 6 files: web design principles, clean architecture, react patterns, SOLID, TypeScript patterns, error handling |
 | `Layers/` | 3 files: presentation, domain, data |
 | `Quality/` | 7 files: code style, code review, documentation, project structure, accessibility, testing, design tokens |
 | `Tools/` | 4 files: vite, eslint, npm, arcdevtools-web |
 | `Workflow/` | 3 files: git commits, git branches, plan mode |
-| `Projects/` | 2 files: sites (SPA marketing), apps (full web apps) |
+| `Projects/` | 3 files: sites (SPA marketing), apps (full web apps), web-marketing-positioning |
