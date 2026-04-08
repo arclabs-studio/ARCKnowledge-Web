@@ -22,14 +22,22 @@ All visual values are CSS custom properties in `src/presentation/styles/tokens.c
 
 ---
 
-## Brand Colors
+## Brand Colors & Complete Palette
 
-```css
-/* ARC Labs Studio brand */
---color-brand-primary:   #541311;  /* Burgundy */
---color-brand-secondary: #FFB42E;  /* Gold */
---color-brand-dark:      #000000;  /* Pure black */
-```
+For the complete color palette — brand colors, surface hierarchy, text colors, semantic colors, and all theme overrides — see [`DESIGN.md`](../DESIGN.md) section 2 (Color Palette & Roles).
+
+Quick reference:
+
+| Token | Role |
+|-------|------|
+| `--color-brand-primary` | Burgundy — primary actions, CTA buttons |
+| `--color-brand-secondary` | Gold — accents, focus rings, active indicators |
+| `--color-brand-dark` | Pure black — maximum contrast surface |
+| `--color-background` | Page background |
+| `--color-surface` | Cards, panels |
+| `--color-surface-elevated` | Hover states, nested content |
+| `--color-text-primary` | Headlines, body text |
+| `--color-text-secondary` | Subheadings, captions |
 
 ---
 

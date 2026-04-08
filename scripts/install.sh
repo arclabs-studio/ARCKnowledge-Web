@@ -96,6 +96,28 @@ for agent_file in "$AGENTS_SOURCE"/arc-*.md; do
   AGENT_COUNT=$((AGENT_COUNT + 1))
 done
 
+# ── Symlink DESIGN.md ─────────────────────────────────────────────────────────
+
+echo ""
+echo "Linking DESIGN.md..."
+DESIGN_SOURCE="$ARCKNOWLEDGE_WEB_PATH/DESIGN.md"
+DESIGN_TARGET="$PROJECT_ROOT/DESIGN.md"
+
+if [ -f "$DESIGN_SOURCE" ]; then
+  if [ -L "$DESIGN_TARGET" ]; then
+    rm "$DESIGN_TARGET"
+  fi
+
+  if [ -f "$DESIGN_TARGET" ] && [ ! -L "$DESIGN_TARGET" ]; then
+    warning "DESIGN.md already exists at project root (not a symlink) — not overwritten."
+  else
+    ln -s "$DESIGN_SOURCE" "$DESIGN_TARGET"
+    info "Linked DESIGN.md to project root"
+  fi
+else
+  warning "DESIGN.md not found at $DESIGN_SOURCE — skipping."
+fi
+
 # ── Copy .mcp.json (if not present) ───────────────────────────────────────────
 
 echo ""
@@ -119,6 +141,7 @@ if [ -f "$GITIGNORE" ]; then
 # ARCKnowledge-Web symlinks
 .claude/skills/arc-*
 .claude/agents/arc-*.md
+DESIGN.md
 EOF
     info "Updated .gitignore — arc-* symlinks are not tracked"
   fi

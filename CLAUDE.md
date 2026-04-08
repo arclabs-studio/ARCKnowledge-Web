@@ -32,6 +32,7 @@ Web Project (e.g., ARCLabsStudio-Web)
     └── ARCKnowledge-Web/           ← nested git submodule
         ├── .claude/skills/arc-*/   ← 16 ARC Labs web skills
         ├── .claude/agents/arc-*/   ← 10 autonomous agents
+        ├── DESIGN.md               ← Visual design system (Google Stitch format)
         ├── Architecture/           ← Architecture reference docs
         ├── Layers/                 ← Layer implementation guides
         ├── Quality/                ← Code quality standards
@@ -74,7 +75,7 @@ Use these slash commands to load detailed context when needed.
 | `/arc-data-layer` | Implementing repositories, API clients, DTOs, Result<T> |
 | `/arc-domain-layer` | Use `/arc-web-architecture` — domain patterns are covered there |
 | `/arc-tdd-patterns` | Writing tests, Vitest + RTL, Given/When/Then, renderHook |
-| `/arc-frontend-design` | Visual design decisions, tokens, animation, anti-AI-slop |
+| `/arc-frontend-design` | Visual design patterns, animation, anti-AI-slop (see also `DESIGN.md`) |
 | `/arc-accessibility` | WCAG 2.2 AA, keyboard nav, ARIA, focus-visible, reduced motion |
 | `/arc-ux-patterns` | Form UX, loading states, error states, microinteractions |
 | `/arc-react-performance` | Re-renders, memoization, bundle splitting, Core Web Vitals |
@@ -131,6 +132,7 @@ Git commits or creating PRs             → /arc-workflow
 
 | Source | When to Use |
 |--------|-------------|
+| **DESIGN.md** | Complete ARC Labs visual design system — colors, typography, component specs, layout, depth, responsive. Google Stitch format. Read before any visual implementation. |
 | **Context7 MCP** | Live library docs for React 19, Vite 7, Vitest, TanStack Query, Playwright |
 | **Playwright MCP** | Browser automation, visual verification, Lighthouse auditing |
 | **Vitest MCP** | Structured test output without watch-mode hang |
