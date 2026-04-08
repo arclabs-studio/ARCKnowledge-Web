@@ -6,6 +6,19 @@ Format: [Semantic Versioning](https://semver.org/) — `Added`, `Changed`, `Fixe
 
 ---
 
+## [0.2.0] — 2026-04-08
+
+### Added
+- `DESIGN.md` — Complete ARC Labs visual design system in Google Stitch format (9 sections: visual theme, color palette, typography, component styling, layout, depth, do's and don'ts, responsive behavior, agent prompt guide)
+- `Projects/web-marketing-positioning.md` — Web marketing and positioning guide covering positioning, conversion architecture, SEO, AI/LLM search, copywriting, CRO, and analytics
+
+### Changed
+- `scripts/install.sh` — Now symlinks `DESIGN.md` to downstream project root
+- `Skills/skills-index.md` — Added DESIGN.md references, design implementation workflow scenario, and updated knowledge base index
+- `CLAUDE.md` — Added DESIGN.md to complementary documentation sources
+
+---
+
 ## [0.1.0] — 2026-03-23
 
 ### Added
